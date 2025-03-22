@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Context aware tesing using Gen AI
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
