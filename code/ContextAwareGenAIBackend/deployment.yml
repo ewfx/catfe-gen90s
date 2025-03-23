@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boot-configmap-deployment
+  labels:
+    app: boot-configmap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boot-configmap
+  template:
+    metadata:
+      labels:
+        app: boot-configmap
+    spec:
+      containers:
+      - name: boot-configmap
+        image: kpraghav/springboot-configmap-demo:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: GREETING_PREFIX
+            valueFrom:
+             configMapKeyRef:
+                name: spring-boot-configmaps-demo
+                key: greeter.prefix
