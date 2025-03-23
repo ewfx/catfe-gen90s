@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Button, TextField, Typography, Paper, Box } from '@mui/material';
 
 const ReadAnyApp = () => {
   const [url, setUrl] = useState('');
@@ -15,17 +16,38 @@ const ReadAnyApp = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Read Any App</h2>
-      <input 
-        value={url} 
-        onChange={(e) => setUrl(e.target.value)} 
-        placeholder="Enter application URL..." 
-        style={{ width: '100%', padding: '10px' }}
-      />
-      <button onClick={generateTestCases} style={{ marginTop: '10px' }}>Generate & Run Test Cases</button>
-      <textarea readOnly value={testCases} style={{ width: '100%', height: '200px', marginTop: '10px' }} />
-    </div>
+    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+      <Paper elevation={3} sx={{ padding: 3, maxWidth: 500, textAlign: 'center' }}>
+        <Typography variant="h5" gutterBottom>
+          Read Any App
+        </Typography>
+        <TextField
+          fullWidth
+          label="Enter Application URL"
+          variant="outlined"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          sx={{ mb: 2 }}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={generateTestCases}
+          disabled={!url}
+        >
+          Generate & Run Test Cases
+        </Button>
+        <TextField
+          fullWidth
+          multiline
+          rows={6}
+          variant="outlined"
+          value={testCases}
+          sx={{ mt: 2 }}
+          InputProps={{ readOnly: true }}
+        />
+      </Paper>
+    </Box>
   );
 };
 

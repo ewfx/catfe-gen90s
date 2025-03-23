@@ -34,7 +34,6 @@ const FraudDetection = () => {
       });
 
       setResult(response.data);
-	  console.log("data --- > "+response.data);
     } catch (err) {
       setError('Error uploading file: ' + (err.response?.data?.error || err.message));
     } finally {
@@ -43,16 +42,18 @@ const FraudDetection = () => {
   };
 
   return (
-    <Box sx={{ padding: 3 }}>
-      <Paper elevation={3} sx={{ padding: 3 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+      <Paper elevation={3} sx={{ padding: 3, maxWidth: 500, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
           Upload Transaction Data
         </Typography>
-        <input
+        <TextField
           type="file"
-          accept=".csv"
+          fullWidth
+          variant="outlined"
+          inputProps={{ accept: '.csv' }}
           onChange={handleFileChange}
-          style={{ marginBottom: '20px' }}
+          sx={{ mb: 2 }}
         />
         <Button
           variant="contained"
@@ -70,16 +71,16 @@ const FraudDetection = () => {
         )}
 
         {result && (
-          <Box sx={{ marginTop: 3 }}>
+          <Box sx={{ marginTop: 3, textAlign: 'left' }}>
             <Typography variant="h6">Fraud Analysis and Test Cases</Typography>
-            <pre style={{ whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
-              {result.fraud_analysis_and_tests}
-            </pre>
+            <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5', borderRadius: '4px' }}>
+              <Typography variant="body2">{result.fraud_analysis_and_tests}</Typography>
+            </Paper>
 
             <Typography variant="h6" sx={{ marginTop: 2 }}>Test Execution Summary</Typography>
-            <pre style={{ whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
-              {result.execution_summary}
-            </pre>
+            <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5', borderRadius: '4px' }}>
+              <Typography variant="body2">{result.execution_summary}</Typography>
+            </Paper>
           </Box>
         )}
       </Paper>
