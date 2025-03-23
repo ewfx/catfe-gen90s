@@ -5,11 +5,13 @@ import { Button, TextField, Typography, Paper, Box } from '@mui/material';
 const ReadAnyApp = () => {
   const [url, setUrl] = useState('');
   const [testCases, setTestCases] = useState('');
-
+ const [appDescription, setAppDescription] = useState('');
   const generateTestCases = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/read-any-app', { url });
-      setTestCases(response.data.testCases);
+      const response = await axios.post('http://localhost:8083/api/generate-bdd-test-cases-by-url', { 
+	  url: url,
+	  description: appDescription });
+      setTestCases(response.data.gen_tests_by_url);
     } catch (error) {
       alert('Error generating test cases');
     }
@@ -29,13 +31,23 @@ const ReadAnyApp = () => {
           onChange={(e) => setUrl(e.target.value)}
           sx={{ mb: 2 }}
         />
+		<TextField
+          fullWidth
+          multiline
+          rows={4}
+          label="Describe your application"
+          variant="outlined"
+          value={appDescription}
+          onChange={(e) => setAppDescription(e.target.value)}
+          sx={{ mb: 2 }}
+        />
         <Button
           variant="contained"
           color="primary"
           onClick={generateTestCases}
           disabled={!url}
         >
-          Generate & Run Test Cases
+          Generate Test Cases
         </Button>
         <TextField
           fullWidth

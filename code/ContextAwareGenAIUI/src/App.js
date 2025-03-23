@@ -10,7 +10,7 @@ import EthicalHacking from './components/EthicalHacking';
 import FraudDetection from './components/FraudDetection';
 import Home from './components/Home';
 import Chatbot from './components/Chatbot'; // Import chatbot
-
+import ReadAnyApp from './components/ReadAnyApp';
 const drawerWidth = 240;
 
 const Sidebar = ({ open, toggleDrawer }) => (
@@ -37,6 +37,9 @@ const Sidebar = ({ open, toggleDrawer }) => (
       </ListItem>
       <ListItem button component={Link} to="/context-aware">
         <ListItemText primary="Context-Aware Testing" />
+      </ListItem>	 
+	  <ListItem button component={Link} to="/context-by-url">
+        <ListItemText primary="Read and generate" />
       </ListItem>
       <ListItem button component={Link} to="/ethical-hacking">
         <ListItemText primary="Ethical Hacking Test" />
@@ -68,6 +71,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/context-aware" element={<ContextAware />} />
+			 <Route path="/context-by-url" element={<ReadAnyApp />} />
             <Route path="/ethical-hacking" element={<EthicalHacking />} />
             <Route path="/fraud-detection" element={<FraudDetection />} />
           </Routes>
