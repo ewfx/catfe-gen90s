@@ -93,12 +93,14 @@ public class GenAIService {
                             transactionId, amount, accountBalance, location, loginAttempts));
                     fraudAnalysis.append("  Reason: ").append(fraudReason.toString()).append("\n");
 
-                    testCases.append(String.format("""
-                            Scenario: Detect Fraudulent Transaction - ID %s
-                              Given a transaction with ID %s and amount $%.2f from %s with account balance $%.2f and %d login attempts
-                              When the transaction is processed
-                              Then the fraud detection system flags it as suspicious due to %s
-                            """, transactionId, transactionId, amount, location, accountBalance, loginAttempts, fraudReason.toString()));
+                    testCases.append(String.format(
+                    	    "Scenario: Detect Fraudulent Transaction - ID %s\n" +
+                    	    "  Given a transaction with ID %s and amount $%.2f from %s with account balance $%.2f and %d login attempts\n" +
+                    	    "  When the transaction is processed\n" +
+                    	    "  Then the fraud detection system flags it as suspicious due to %s\n",
+                    	    transactionId, transactionId, amount, location, accountBalance, loginAttempts, fraudReason.toString()
+                    	));
+
                 }
             } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
                 fraudAnalysis.append("Error processing transaction ").append(transaction[0]).append(": ").append(e.getMessage()).append("\n");
@@ -145,13 +147,14 @@ public class GenAIService {
 
     // Existing methods (unchanged for brevity, add if needed)
     public String generateBddTests(String description) {
-        return String.format("""
-                Feature: Financial App Testing
-                  Scenario: Basic Functionality
-                    Given the app is running
-                    When the user interacts with %s
-                    Then the app responds successfully
-                """, description);
+    	 return String.format(
+    		        "Feature: Financial App Testing\n" +
+    		        "  Scenario: Basic Functionality\n" +
+    		        "    Given the app is running\n" +
+    		        "    When the user interacts with %s\n" +
+    		        "    Then the app responds successfully", 
+    		        description
+    		    );
     }
 
     public String handleChatbotMessage(String message) {
@@ -174,34 +177,35 @@ public class GenAIService {
     }
     
     public String generatePaymentTransactionTests(String description) {
-        return String.format("""
-                Feature: Payment Transactions Testing
-                  Scenario: Successful Payment Processing
-                    Given the user is logged into the banking app
-                    When the user initiates a payment with %s
-                    Then the payment is processed successfully
-                  Scenario: Insufficient Funds
-                    Given the user has insufficient funds
-                    When the user attempts a payment with %s
-                    Then the payment is rejected with an error
-                """, description, description);
+        return String.format(
+            "Feature: Payment Transactions Testing\n" +
+            "  Scenario: Successful Payment Processing\n" +
+            "    Given the user is logged into the banking app\n" +
+            "    When the user initiates a payment with %s\n" +
+            "    Then the payment is processed successfully\n" +
+            "  Scenario: Insufficient Funds\n" +
+            "    Given the user has insufficient funds\n" +
+            "    When the user attempts a payment with %s\n" +
+            "    Then the payment is rejected with an error\n",
+            description, description
+        );
     }
 
+
     public String generateFraudDetectionTests(String description) {
-        return String.format("""
-                Feature: Fraud Detection Testing
-                  Scenario: Detect Suspicious Transaction
-                    Given a transaction with %s is initiated
-                    When the transaction exceeds normal limits
-                    Then the fraud detection system flags it
-                  Scenario: Normal Transaction
-                    Given a transaction with %s is initiated
-                    When the transaction is within normal limits
-                    Then the fraud detection system approves it
-                """, description, description);
+        return String.format(
+            "Feature: Fraud Detection Testing\n" +
+            "  Scenario: Detect Suspicious Transaction\n" +
+            "    Given a transaction with %s is initiated\n" +
+            "    When the transaction exceeds normal limits\n" +
+            "    Then the fraud detection system flags it\n" +
+            "  Scenario: Normal Transaction\n" +
+            "    Given a transaction with %s is initiated\n" +
+            "    When the transaction is within normal limits\n" +
+            "    Then the fraud detection system approves it\n",
+            description, description
+        );
     }
-    
-    
-    
+
     
 }

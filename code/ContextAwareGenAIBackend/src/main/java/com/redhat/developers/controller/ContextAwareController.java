@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -52,10 +53,31 @@ public class ContextAwareController {
 	 * ResponseEntity.ok(response); }
 	 */
     
+//    @PostMapping(value = "/ethical_hack", produces = MediaType.TEXT_HTML_VALUE)
+//    @Operation(summary = "Simulate ethical hack on app", description = "Performs an ethical hack using OWASP ZAP and returns a downloadable HTML report.")
+//    public ResponseEntity<byte[]> ethicalHack(
+//            @Parameter(description = "URL of the app to hack") @RequestParam String url) {
+//        String reportContent = ethicalHackService.generateEthicalHackReport(url);
+//
+//        // Set headers for file download
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.TEXT_HTML);
+//        headers.setContentDispositionFormData("attachment", "ethical_hack_report.html");
+//        headers.setContentLength(reportContent.getBytes().length);
+//
+//        return new ResponseEntity<>(reportContent.getBytes(), headers, org.springframework.http.HttpStatus.OK);
+//    }
+    
+  
     @PostMapping(value = "/ethical_hack", produces = MediaType.TEXT_HTML_VALUE)
     @Operation(summary = "Simulate ethical hack on app", description = "Performs an ethical hack using OWASP ZAP and returns a downloadable HTML report.")
-    public ResponseEntity<byte[]> ethicalHack(
-            @Parameter(description = "URL of the app to hack") @RequestParam String url) {
+    public ResponseEntity<byte[]> ethicalHack(@RequestBody Map<String, String> requestBody) {
+        String url = requestBody.get("url"); // Extract URL from JSON body
+
+        if (url == null || url.isBlank()) {
+            return ResponseEntity.badRequest().body("URL parameter is missing".getBytes());
+        }
+
         String reportContent = ethicalHackService.generateEthicalHackReport(url);
 
         // Set headers for file download
@@ -64,10 +86,8 @@ public class ContextAwareController {
         headers.setContentDispositionFormData("attachment", "ethical_hack_report.html");
         headers.setContentLength(reportContent.getBytes().length);
 
-        return new ResponseEntity<>(reportContent.getBytes(), headers, org.springframework.http.HttpStatus.OK);
+        return new ResponseEntity<>(reportContent.getBytes(), headers, HttpStatus.OK);
     }
-    
-  
 
     @PostMapping("/analyze_payment_fraud_data")
     @Operation(summary = "Analyze payment fraud data and generate tests", description = "Uploads transaction data, detects fraud, and generates BDD test cases.")
