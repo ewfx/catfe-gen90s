@@ -1,0 +1,4 @@
+
+https://www.alphavantage.co/support/#api-key
+
+Welcome to Alpha Vantage! Your dedicated access key is: D5FI8OU0VIJ65Z2D. Please record this API key at a safe place for future data access.

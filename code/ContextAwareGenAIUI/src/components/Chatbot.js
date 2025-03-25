@@ -3,7 +3,7 @@ import { Box, TextField, IconButton, Paper, Typography, Button } from "@mui/mate
 import ChatIcon from "@mui/icons-material/Chat";
 import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
-
+import axios from "axios";
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -13,25 +13,15 @@ const Chatbot = () => {
 
   const toggleChat = () => setOpen(!open);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMessage = { text: input, sender: "user" };
-    setMessages((prev) => [...prev, userMessage]);
+	
+	const response = await axios.post("http://localhost:8083/chat", { message: input });
+    setMessages([...messages, { user: input, bot: response.data }]);   
 
-    let botResponse = "I'm not sure. Can you clarify?";
-
-    if (input.toLowerCase().includes("fraud detection")) {
-      botResponse = "Fraud detection uses AI to analyze transactions and identify suspicious patterns.";
-    } else if (input.toLowerCase().includes("ethical hacking")) {
-      botResponse = "Ethical hacking tests vulnerabilities in your application using AI-driven attack simulations.";
-    } else if (input.toLowerCase().includes("compliance")) {
-      botResponse = "Compliance testing ensures your application follows KYC, AML, and SOX regulations.";
-    }
-
-    setTimeout(() => {
-      setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
-    }, 1000);
+    
 
     setInput("");
   };
@@ -55,11 +45,12 @@ const Chatbot = () => {
             </IconButton>
           </Box>
           <Box sx={{ flex: 1, p: 2, overflowY: "auto" }}>
-            {messages.map((msg, index) => (
-              <Typography key={index} sx={{ textAlign: msg.sender === "user" ? "right" : "left", color: msg.sender === "user" ? "#0d47a1" : "#000" }}>
-                <strong>{msg.sender === "user" ? "You" : "Bot"}:</strong> {msg.text}
-              </Typography>
-            ))}
+            {messages.map((msg, idx) => (
+          <div key={idx}>
+            <strong>You:</strong> {msg.user} <br />
+            <strong>Bot:</strong> {msg.bot}
+          </div>
+        ))}
           </Box>
           <Box sx={{ display: "flex", p: 1 }}>
             <TextField
