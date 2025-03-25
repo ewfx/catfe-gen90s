@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, TextField, Typography, Paper, Box } from '@mui/material';
+import { Button, TextField, Typography, Paper, Box, CircularProgress } from '@mui/material';
 
 const ContextAware = () => {
   const [appDescription, setAppDescription] = useState('');
-  const [testCases, setTestCases] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const generateTestCases = async () => {
+    setLoading(true);
     try {
       const response = await axios.post('http://localhost:8083/api/generate-test-cases', { description: appDescription });
-      setTestCases(response.data.testCases);
+      setMessage(response.data.testCases);
     } catch (error) {
-      alert('Error generating test cases');
+      setMessage('Error generating test cases');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
-      <Paper elevation={3} sx={{ padding: 3, maxWidth: 500, textAlign: 'center' }}>
+      <Paper elevation={3} sx={{ padding: 3, maxWidth: 800, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
           Context-Aware Testing
         </Typography>
@@ -35,17 +39,17 @@ const ContextAware = () => {
           variant="contained"
           color="primary"
           onClick={generateTestCases}
-          disabled={!appDescription}
+          disabled={!appDescription || loading}
         >
-          Generate Test Cases
+          {loading ? <CircularProgress size={24} /> : 'Generate Test Cases'}
         </Button>
         <TextField
           fullWidth
           multiline
-          rows={6}
+          rows={12}
           variant="outlined"
-          value={testCases}
-          sx={{ mt: 2 }}
+          value={message}
+          sx={{ mt: 2, whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}
           InputProps={{ readOnly: true }}
         />
       </Paper>

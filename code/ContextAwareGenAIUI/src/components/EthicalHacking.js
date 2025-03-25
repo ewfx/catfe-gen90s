@@ -84,7 +84,7 @@ const EthicalHacking = () => {
           disabled={!url || loading}
           sx={{ mb: 2 }}
         >
-          {loading ? <CircularProgress size={24} /> : 'Simulate Hack'}
+          {loading ? <CircularProgress size={24} /> : 'Ethical Hack'}
         </Button>
 
         {downloadLink && (
