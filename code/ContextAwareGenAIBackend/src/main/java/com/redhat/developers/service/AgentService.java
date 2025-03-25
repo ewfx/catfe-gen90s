@@ -10,12 +10,17 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.http.*;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import org.springframework.web.client.RestTemplate;
 @Service
 public class AgentService {
 
@@ -118,4 +123,86 @@ public class AgentService {
     public Map<String, String> getFinancialData() {
         return financialData;
     }
+    
+    
+    // ✅ Generate BDD Test Cases using TogetherAI
+    public String generateBDD(String context) {
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + openaiApiKey);
+            headers.set("Content-Type", "application/json");
+
+            Map<String, String> requestBody = Map.of("context", context);
+            HttpEntity<Map<String, String>> request = new HttpEntity<>(requestBody, headers);
+
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> response = restTemplate.postForEntity("https://api.together.ai/generate", request, String.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                saveGeneratedTestCases(response.getBody());
+                return "BDD Test Cases Generated Successfully and saved as 'generated.feature'";
+            } else {
+                return "Failed to generate BDD Test Cases. Response: " + response.getBody();
+            }
+        } catch (Exception e) {
+            return "Error in BDD generation: " + e.getMessage();
+        }
+    }
+
+    // ✅ Save BDD Test Cases to a Feature File
+    private void saveGeneratedTestCases(String testCases) throws IOException {
+        File featureFile = new File("src/test/resources/generated.feature");
+        featureFile.getParentFile().mkdirs(); // Ensure directories exist
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(featureFile))) {
+            writer.write(testCases);
+        }
+    }
+
+    // ✅ Execute BDD Tests using Cucumber
+    public String executeTests() {
+        try {
+        	
+        	ProcessBuilder processBuilder = new ProcessBuilder(
+        		    "C:\\Users\\kprag\\worksoftwares\\apache-maven-3.8.1-bin\\apache-maven-3.8.1\\bin\\mvn.cmd",
+        		    "test"
+        		);
+        		processBuilder.directory(new File("C:\\Users\\kprag\\Downloads\\spring-boot-configmaps-demo-master\\spring-boot-configmaps-demo-master"));
+
+        	
+				/*
+				 * ProcessBuilder pb = new ProcessBuilder(
+				 * "C:\\Users\\kprag\\worksoftwares\\apache-maven-3.8.1-bin\\apache-maven-3.8.1\\bin\\mvn",
+				 * "test"); pb.directory(new File(System.getProperty("user.dir")));
+				 */
+        		processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+        		processBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
+
+            Process process = processBuilder.start();
+            int exitCode = process.waitFor();
+
+            return (exitCode == 0) ? "Tests executed successfully." : "Test execution failed.";
+        } catch (Exception e) {
+            return "Error executing tests: " + e.getMessage();
+        }
+    }
+
+    // ✅ Generate Test Report
+    public String generateReport() {
+        try {
+            String reportPath = "target/cucumber-reports/report.html";
+            File reportFile = new File(reportPath);
+
+            if (reportFile.exists()) {
+                return "Report generated successfully. Download it from /agent/download-report";
+            } else {
+                return "Report generation failed. Please check logs.";
+            }
+        } catch (Exception e) {
+            return "Error generating report: " + e.getMessage();
+        }
+    }
+
+    
+    
 }
