@@ -22,7 +22,15 @@ Please refer artifacts/demo folder
 ## 💡 Inspiration
 Generate context aware test cases for financial transactions, customer interactions, fraud detection, regulatory compliance and risk assessment 
 AI agent which can update test cases, based on system changes, reducing maintenance efforts 
-AI driven test scenario synthesis to simulate real world banking activities such as KYC validation, loan approvals, real-time fraud detection and compliance monitoring. 
+GenAI driven test scenario synthesis to simulate real world banking activities such as KYC validation, loan approvals, real-time fraud detection and compliance monitoring and one of the key
+motivation to build a Context-Aware Testing (CAT) system in financial ecosystems stems from the growing complexity, regulatory pressure, and evolving user expectations in the financial sector. 
+Traditional testing approaches often fall short in simulating real-world financial scenarios, leading to undetected issues in production. Context-aware testing provides a more dynamic and intelligent solution. Here are the key inspirations driving its creation:
+
+- Increasing Complexity of Financial Applications
+- Data-Driven Decision Making
+- Enhanced User Experience (UX)
+- Regulatory Compliance and Risk Management
+- Ethical Hack Integration
 
 ## ⚙️ What It Does
 This application supports below testing scenarios: 
