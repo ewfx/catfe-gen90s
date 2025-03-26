@@ -56,6 +56,9 @@ Describe the major technical or non-technical challenges your team encountered.
    spring-boot-configmaps-demo-0.0.1-SNAPSHOT.jar
    ```  ```
 once started , you should the application home page like below
+
+![image](https://github.com/user-attachments/assets/2b9a0152-356d-451e-a0ba-469442ccbe72)
+
 ## 🏗️ Tech Stack
 - 🔹 Frontend: React 
 - 🔹 Backend: Spring boot Microservice and Cucumber
