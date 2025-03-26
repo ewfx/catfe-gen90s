@@ -18,11 +18,9 @@ const EthicalHacking = () => {
     setRawHtml(null);
 
     try {
-      const response = await axios.post(
-        `http://localhost:8083/api/ethical_hack`,  // Corrected request URL
-        { url }, // Sending the URL in request body instead of query params
-        { responseType: 'blob' }
-      );
+      const response = await axios.post('http://localhost:8083/api/ethical_hack?url='+url, {
+      responseType: 'blob', // Important for file download
+    });
 
       const blob = new Blob([response.data], { type: 'text/html' });
       const fileURL = window.URL.createObjectURL(blob);

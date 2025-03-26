@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraud Detection Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
+    h1, h2 { color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #3498db; color: white; }
+    .scenario { background-color: #ecf0f1; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    .scenario h3 { color: #e74c3c; }
+  </style>
+</head>
+<body>
+  <h1>Fraud Detection Report</h1>
+
+  <h2>Fraudulent Transactions Detected</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Amount</th>
+        <th>Account Balance</th>
+        <th>Location</th>
+        <th>Login Attempts</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TX000008</td>
+        <td>$171.42</td>
+        <td>$2796.24</td>
+        <td>Indianapolis</td>
+        <td>1</td>
+        <td>Unusual transaction duration (291s > 200s)</td>
+      </tr>
+      <tr>
+        <td>TX000010</td>
+        <td>$815.96</td>
+        <td>$1021.88</td>
+        <td>Nashville</td>
+        <td>1</td>
+        <td>Low account balance ($1021.88 < $2000.0, amount > 50.0% of balance)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>BDD Test Cases</h2>
+
+  <div class="scenario">
+    <h3>Scenario: Detect Fraudulent Transaction - ID TX000008</h3>
+    <p><strong>Given</strong> a transaction with ID <code>TX000008</code> and amount <code>$171.42</code> from Indianapolis with account balance <code>$2796.24</code> and <code>1</code> login attempts</p>
+    <p><strong>When</strong> the transaction is processed</p>
+    <p><strong>Then</strong> the fraud detection system flags it as suspicious due to <em>Unusual transaction duration (291s > 200s)</em></p>
+  </div>
+
+  <div class="scenario">
+    <h3>Scenario: Detect Fraudulent Transaction - ID TX000010</h3>
+    <p><strong>Given</strong> a transaction with ID <code>TX000010</code> and amount <code>$815.96</code> from Nashville with account balance <code>$1021.88</code> and <code>1</code> login attempts</p>
+    <p><strong>When</strong> the transaction is processed</p>
+    <p><strong>Then</strong> the fraud detection system flags it as suspicious due to <em>Low account balance ($1021.88 < $2000.0, amount > 50.0% of balance)</em></p>
+  </div>
+</body>
+</html>

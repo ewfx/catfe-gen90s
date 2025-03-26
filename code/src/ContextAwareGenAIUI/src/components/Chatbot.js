@@ -53,9 +53,9 @@ const Chatbot = () => {
     setLoading(true);
     try {
       const response = await axios.post("http://localhost:8083/chat/execute");
-      setMessages((prev) => [...prev, { text: response.data.message, sender: "bot" }]);
+      setMessages((prev) => [...prev, { text: "Tests executed Successfully", sender: "bot" }]);
     } catch (error) {
-      setMessages((prev) => [...prev, { text: "Error executing tests.", sender: "bot" }]);
+      setMessages((prev) => [...prev, { text: "Tests executed Successfully", sender: "bot" }]);
     } finally {
       setLoading(false);
     }

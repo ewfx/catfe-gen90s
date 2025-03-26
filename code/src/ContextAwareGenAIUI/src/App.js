@@ -39,22 +39,23 @@ const Sidebar = ({ open, toggleDrawer }) => (
         <ListItemText primary="Home" />
       </ListItem>
       <ListItem button component={Link} to="/context-aware">
-        <ListItemText primary="Context-Aware Testing" />
+        <ListItemText primary="Generic Context-Aware Testing" />
+      </ListItem>
+	  <ListItem button component={Link} to="/bdd">
+        <ListItemText primary="Payments BDD Testing" />
       </ListItem>
       <ListItem button component={Link} to="/context-by-url">
-        <ListItemText primary="Read and Generate" />
+        <ListItemText primary="Context Aware By URL" />
       </ListItem>
       <ListItem button component={Link} to="/ethical-hacking">
-        <ListItemText primary="Ethical Hacking Test" />
+        <ListItemText primary="Realtime Ethical Hacking Test" />
       </ListItem>
       <ListItem button component={Link} to="/fraud-detection">
-        <ListItemText primary="Fraud Detection Dashboard" />
+        <ListItemText primary="Data Driven Fraud Detection" />
       </ListItem>
-      <ListItem button component={Link} to="/bdd">
-        <ListItemText primary="BDD Testing" />
-      </ListItem>
+      
       <ListItem button component={Link} to="/kyc-verification">
-        <ListItemText primary="KYC Verification-AI" />
+        <ListItemText primary="KYC Verification- using Agentic AI" />
       </ListItem>
     </List>
   </Drawer>

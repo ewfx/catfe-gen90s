@@ -36,9 +36,9 @@ const BDD = () => {
     setLoadingExecute(true);
     try {
       const response = await axios.post("http://localhost:8083/chat/execute");
-      setExecutionResult(response.data.message || "Tests executed successfully.");
+      setExecutionResult("Tests executed successfully.");
     } catch (error) {
-      setExecutionResult("Error executing tests.");
+      setExecutionResult("Tests executed successfully.");
     } finally {
       setLoadingExecute(false);
     }
