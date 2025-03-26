@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDD Test Report - Payment Servicing using SWIFT ISO</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #0056b3; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #007bff; color: white; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h1>BDD Test Report - Payment Servicing using SWIFT ISO</h1>
+
+  <h2>Feature: Payment Servicing using SWIFT ISO</h2>
+  <p>Given a valid SWIFT ISO 20022 payment message and a system configured to process SWIFT ISO payments, scenarios are tested under various conditions.</p>
+
+  <h3>Test Scenarios</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Description</th>
+        <th>Expected Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Successful Payment Processing - Credit Transfer</td>
+        <td>Process a payment with sufficient funds and valid BICs.</td>
+        <td>Payment Successful, Sender Debited, Receiver Credited, ACK Generated.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Insufficient Funds</td>
+        <td>Attempt a payment with insufficient sender funds.</td>
+        <td>Payment Rejected, NACK Generated, Error Message Logged.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Invalid Receiver BIC</td>
+        <td>Send a payment with an invalid receiver BIC.</td>
+        <td>Payment Rejected, NACK Generated, Invalid BIC Error Logged.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Invalid Currency</td>
+        <td>Send a payment using an invalid currency code.</td>
+        <td>Payment Rejected, NACK Generated, Invalid Currency Error Logged.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Message Validation Error (Missing Field)</td>
+        <td>Process a payment with missing mandatory fields.</td>
+        <td>Payment Rejected, Validation Error Logged, NACK Generated.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Regulatory Check Failure</td>
+        <td>Process a payment flagged for regulatory checks.</td>
+        <td>Payment Held for Review, Alert Generated, Sender Account Blocked.</td>
+      </tr>
+      <tr>
+        <td>Payment Processing with Different Message Types</td>
+        <td>Test various message types like pacs.008, pacs.009, and camt.053.</td>
+        <td>Process Based on Message Type, Generate Appropriate Response.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Conclusion</h2>
+  <p>The above scenarios cover all key functionalities of the SWIFT ISO Payment Servicing system. The results from this report can be used to analyze the success rate and detect issues.</p>
+
+</body>
+</html>
