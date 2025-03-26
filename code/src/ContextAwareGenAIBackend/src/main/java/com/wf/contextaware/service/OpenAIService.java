@@ -1,4 +1,4 @@
-package com.redhat.developers.service;
+package com.wf.contextaware.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,8 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.redhat.developers.model.TestCase;
-
+import com.wf.contextaware.model.TestCase;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

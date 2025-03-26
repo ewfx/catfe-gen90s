@@ -1,4 +1,4 @@
-package com.redhat.developers.configuration;
+package com.wf.contextaware.configuration;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.redhat.developers.configuration;
+package com.wf.contextaware.configuration;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;

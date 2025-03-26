@@ -1,4 +1,4 @@
-package com.redhat.developers.service;
+package com.wf.contextaware.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

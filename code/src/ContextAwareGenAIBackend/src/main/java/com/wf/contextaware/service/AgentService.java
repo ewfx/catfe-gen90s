@@ -1,8 +1,9 @@
-package com.redhat.developers.service;
+package com.wf.contextaware.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.redhat.developers.model.Message;
+import com.wf.contextaware.model.Message;
+
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;

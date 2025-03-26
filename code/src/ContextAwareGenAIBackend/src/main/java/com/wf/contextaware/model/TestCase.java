@@ -1,4 +1,4 @@
-package com.redhat.developers.model;
+package com.wf.contextaware.model;
 
 public class TestCase {
 	private String given;

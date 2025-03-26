@@ -1,13 +1,13 @@
-package com.redhat.developers;
+package com.wf.contextaware;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.redhat.developers.configuration.KycDetailsRequest;
-import com.redhat.developers.configuration.KycResult;
-import com.redhat.developers.service.KycHugService;
+import com.wf.contextaware.configuration.KycDetailsRequest;
+import com.wf.contextaware.configuration.KycResult;
+import com.wf.contextaware.service.KycHugService;
 
 
 

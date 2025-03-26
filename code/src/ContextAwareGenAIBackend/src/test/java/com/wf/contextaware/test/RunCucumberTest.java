@@ -1,4 +1,4 @@
-package com.redhat.test;
+package com.wf.contextaware.test;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

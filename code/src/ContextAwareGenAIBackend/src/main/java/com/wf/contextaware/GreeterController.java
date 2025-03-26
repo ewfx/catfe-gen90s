@@ -1,4 +1,4 @@
-package com.redhat.developers;
+package com.wf.contextaware;
 
 import lombok.extern.slf4j.Slf4j;
 
