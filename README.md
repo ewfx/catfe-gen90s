@@ -94,11 +94,72 @@ Visualizes data using interactive dashboards for easy decision-making by stakeho
 In essence, the Context-Aware Testing System ensures that financial applications are reliable, secure, and compliant by proactively identifying potential issues before they impact users. It significantly reduces the manual effort involved in test creation and accelerates the time-to-market for financial products.
 
 ## 🛠️ How We Built It
-Frontend - React/Vue/Angular
-Processing Layer - Spring Boot Microservices
-LLM Models used - OpenAI/LLM APIs,Alpha Vantage API, OWASP ZAP, TogetherAI API, meta LLama, Gemini Flash
-Runs on Kubernetes using ConfigMaps. 
-Uses Maven + Cucumber for test execution. 
+The Context-Aware Testing System was developed using a modern and scalable technology stack, incorporating AI-powered intelligence, microservices architecture, and real-time analysis. Each component was carefully designed to ensure seamless integration, high performance, and scalability. Here’s how we built it:
+
+## Backend Development Using Java Spring Boot Microservices
+- The backend is built using Java Spring Boot, following a microservices architecture to ensure modularity and flexibility.
+
+- Each microservice is dedicated to specific functionalities, such as test case generation, execution, fraud detection, ethical hacking tests, and reporting.
+
+- The microservices communicate using REST APIs and gRPC for efficient data exchange.
+
+- Spring Security ensures secure authentication and authorization for all users.
+
+## Frontend with ReactJS
+- The user interface is developed using ReactJS to provide an interactive and responsive user experience.
+
+- Users can access various menus for different testing scenarios, input application URLs, generate BDD test cases, and view reports through a clean and intuitive UI.
+
+- State management using Redux ensures efficient data handling and UI updates.
+
+## AI-Powered Context-Aware Capabilities Using Agentic AI and Together AI
+- The system uses Agentic AI through Together AI to interpret the application context, predict potential risks, and recommend relevant test cases.
+
+- For natural language understanding and BDD generation, we integrated AI models such as:
+
+      mistralai/Mixtral-8x22B-Instruct-v0.1 for intelligent scenario generation.
+
+      meta-llama/Llama-3.3-70B-Instruct-Turbo for context-aware decision-making.
+
+- The AI chatbot also utilizes Together AI to provide real-time insights and stock data interactions.
+## BDD Test Case Generation Using Google API's Gemini-2.0-Flash
+- For Behavior-Driven Development (BDD) test generation, we use Gemini-2.0-Flash from Google APIs.
+
+- Users provide contextual inputs such as application URLs or financial scenarios, and the system generates precise BDD test cases using AI-driven predictions.
+
+## Real-Time Ethical Hacking with ZAP OWASP
+- ZAP OWASP (Zed Attack Proxy) is integrated to perform real-time security assessments.
+
+- It simulates cyberattacks to identify vulnerabilities like SQL injections, cross-site scripting (XSS), and API weaknesses.
+
+- Reports are generated with categorized risk levels for further analysis and mitigation.
+
+## Fraud Detection Using AI Models
+- The system uses Agentic AI to analyze transactional data in real-time and detect fraudulent activities using advanced anomaly detection algorithms.
+
+- Suspicious transactions are flagged for further investigation, reducing financial losses and enhancing security.
+## KYC Verification Using Agentic AI
+- The KYC (Know Your Customer) module uses AI for document verification, identity validation, and compliance checks.
+
+- It leverages machine learning to detect anomalies and ensure financial institutions meet regulatory requirements.
+
+## Real-Time Stock Integration Using Alpha Vantage  
+- For live stock data, we integrated Alpha Vantage APIs.
+
+- Users can access real-time stock information to perform trading scenario testing or simulate stock-related application behavior.
+
+- The chatbot uses this data to provide financial insights and assist in testing stock-related use cases.
+
+## Reporting and Visualization
+- Comprehensive reports are generated with AI-powered insights and presented through interactive dashboards using ReactJS.
+
+- Reports include test results, vulnerability analysis, fraud detection insights, and stock data analytics.
+
+- Reports can also be emailed directly to stakeholders for faster decision-making.
+
+## Jira Ready Integration
+- This app is also having a plug play capability to integrate with other tools such as Jira for realtime ticket creation integration.
+  
 ## 🚧 Challenges We Faced
 1. API Key/Token limits, only free LLM models could be used.
 
