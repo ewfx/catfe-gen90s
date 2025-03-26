@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Context-Aware Generative AI-driven Test Automation Platform
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -14,26 +14,40 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+This project is a Context-Aware Generative AI-driven Test Automation Platform built using Spring Boot and deployed in a Kubernetes environment. It integrates OpenAI/LLM services, ethical hacking simulations, and fraud detection mechanisms to automate test case generation, execution, and security validation. The application provides RESTful APIs for interacting with AI-driven test automation and security assessments. 
 
 ## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
-🖼️ Screenshots:
-
-![Screenshot 1](link-to-image)
+Please refer artifacts/demo folder 
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+Generate context aware test cases for financial transactions, customer interactions, fraud detection, regulatory compliance and risk assessment 
+AI agent which can update test cases, based on system changes, reducing maintenance efforts 
+AI driven test scenario synthesis to simulate real world banking activities such as KYC validation, loan approvals, real-time fraud detection and compliance monitoring. 
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+This application supports below testing scenarios: 
+
+Generic context  
+
+Ethical hacking 
+
+Fraud Detection 
+
+Loan KYC 
+
+Financial Stock 
+
+Chat bot based on Agentic AI 
+
+BDD testing 
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+Frontend - React/Vue/Angular
+Processing Layer - Spring Boot Microservices
+LLM Models used - OpenAI/LLM APIs,Alpha Vantage API, OWASP ZAP, TogetherAI API, meta LLama, Gemini Flash
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+1. API Key/Token limits, only free LLM models could be used.
 
 ## 🏃 How to Run
 1. Clone the repository  
@@ -62,7 +76,7 @@ once started , you should the application home page like below
 ## 🏗️ Tech Stack
 - 🔹 Frontend: React 
 - 🔹 Backend: Spring boot Microservice and Cucumber
-- 🔹 Database: MongoBD
+- 🔹 Database: MongoDB
 - 🔹 Other:
      •	Chatbot with Agentic AI From TogetherAI -- mistralai/Mixtral-8x22B-Instruct-v0.1
      •	meta-llama/Llama-3.3-70B-Instruct-Turbo
