@@ -45,7 +45,8 @@ BDD testing
 Frontend - React/Vue/Angular
 Processing Layer - Spring Boot Microservices
 LLM Models used - OpenAI/LLM APIs,Alpha Vantage API, OWASP ZAP, TogetherAI API, meta LLama, Gemini Flash
-
+Runs on Kubernetes using ConfigMaps. 
+Uses Maven + Cucumber for test execution. 
 ## 🚧 Challenges We Faced
 1. API Key/Token limits, only free LLM models could be used.
 
