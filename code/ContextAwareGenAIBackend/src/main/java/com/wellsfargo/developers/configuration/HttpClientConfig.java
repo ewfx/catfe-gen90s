@@ -1,4 +1,4 @@
-package com.redhat.developers.configuration;
+package com.wellsfargo.developers.configuration;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;

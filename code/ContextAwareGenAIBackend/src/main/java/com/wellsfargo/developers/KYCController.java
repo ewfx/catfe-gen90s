@@ -1,13 +1,13 @@
-package com.redhat.developers;
+package com.wellsfargo.developers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.redhat.developers.configuration.KycDetailsRequest;
-import com.redhat.developers.configuration.KycResult;
-import com.redhat.developers.service.KycHugService;
+import com.wellsfargo.developers.configuration.KycDetailsRequest;
+import com.wellsfargo.developers.configuration.KycResult;
+import com.wellsfargo.developers.service.KycHugService;
 
 
 

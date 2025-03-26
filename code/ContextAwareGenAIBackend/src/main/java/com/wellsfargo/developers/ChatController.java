@@ -1,4 +1,4 @@
-package com.redhat.developers;
+package com.wellsfargo.developers;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,8 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.redhat.developers.model.ChatRequest;
-import com.redhat.developers.service.AgentService;
+import com.wellsfargo.developers.model.ChatRequest;
+import com.wellsfargo.developers.service.AgentService;
+
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.*;

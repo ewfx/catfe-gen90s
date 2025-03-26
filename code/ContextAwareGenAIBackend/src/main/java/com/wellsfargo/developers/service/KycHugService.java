@@ -1,4 +1,4 @@
-package com.redhat.developers.service;
+package com.wellsfargo.developers.service;
 
 
 import java.util.UUID;
@@ -10,9 +10,9 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.redhat.developers.configuration.KycDetailsRequest;
-import com.redhat.developers.configuration.KycResult;
-import com.redhat.developers.configuration.KycResultRepository;
+import com.wellsfargo.developers.configuration.KycDetailsRequest;
+import com.wellsfargo.developers.configuration.KycResult;
+import com.wellsfargo.developers.configuration.KycResultRepository;
 
 
 @Service

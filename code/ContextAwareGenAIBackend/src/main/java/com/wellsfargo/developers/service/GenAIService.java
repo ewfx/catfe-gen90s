@@ -1,4 +1,4 @@
-package com.redhat.developers.service;
+package com.wellsfargo.developers.service;
 
 import okhttp3.*;
 import org.json.JSONArray;

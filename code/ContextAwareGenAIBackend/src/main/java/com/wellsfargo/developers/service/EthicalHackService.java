@@ -1,10 +1,10 @@
-package com.redhat.developers.service;
+package com.wellsfargo.developers.service;
 import org.springframework.stereotype.Service;
 import org.zaproxy.clientapi.core.Alert;
 import org.zaproxy.clientapi.core.ClientApi;
 import org.zaproxy.clientapi.core.ClientApiException;
 
-import com.redhat.developers.model.Vulnerability;
+import com.wellsfargo.developers.model.Vulnerability;
 
 import java.io.File;
 import java.io.FileWriter;

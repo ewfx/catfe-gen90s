@@ -1,4 +1,4 @@
-package com.redhat.developers.model;
+package com.wellsfargo.developers.model;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.redhat.developers.controller;
+package com.wellsfargo.developers.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -9,16 +9,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.wellsfargo.developers.model.TestCase;
+import com.wellsfargo.developers.service.EthicalHackService;
+import com.wellsfargo.developers.service.GenAIService;
+import com.wellsfargo.developers.service.OpenAIService;
+import com.wellsfargo.developers.service.TestExecutorService;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.redhat.developers.model.TestCase;
-import com.redhat.developers.service.EthicalHackService;
-import com.redhat.developers.service.GenAIService;
-import com.redhat.developers.service.OpenAIService;
-import com.redhat.developers.service.TestExecutorService;
 
 
 

@@ -1,4 +1,4 @@
-package com.redhat.developers.configuration;
+package com.wellsfargo.developers.configuration;
 
 
 import jakarta.persistence.Entity;
