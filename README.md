@@ -14,7 +14,7 @@
 ---
 
 ## 🎯 Introduction
-This project is a Context-Aware Generative AI-driven Test Automation Platform built using Spring Boot and deployed in a Kubernetes environment. It integrates OpenAI/LLM services, ethical hacking simulations, and fraud detection mechanisms to automate test case generation, execution, and security validation. The application provides RESTful APIs for interacting with AI-driven test automation and security assessments. 
+The Context-Aware Testing System is designed to ensure robust and intelligent application testing in financial ecosystems. Built using Java Spring Boot microservices and a dynamic ReactJS front-end, the system leverages advanced AI capabilities through Agentic AI integrated with Together AI using models like mistralai/Mixtral-8x22B-Instruct-v0.1 and meta-llama/Llama-3.3-70B-Instruct-Turbo. For Behavior-Driven Development (BDD) test generation, it utilizes Google API's Gemini-2.0-Flash. Additionally, real-time ethical hacking tests are performed using ZAP OWASP to detect vulnerabilities. The system offers a range of menus and scenarios, including Generic Context-Aware Testing, Payments BDD Testing, Context-Aware Testing by URL, Real-time Ethical Hacking Tests, Data-Driven Fraud Detection, and KYC Verification using Agentic AI. For live financial insights, it integrates with Alpha Vantage for real-time stock information. This innovative testing system empowers organizations to ensure compliance, detect fraud, and enhance application security, while significantly reducing testing effort and time to market.
 
 ## 🎥 Demo
 Please refer artifacts/demo folder 
