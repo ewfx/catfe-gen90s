@@ -161,7 +161,51 @@ The Context-Aware Testing System was developed using a modern and scalable techn
 - This app is also having a plug play capability to integrate with other tools such as Jira for realtime ticket creation integration.
   
 ## 🚧 Challenges We Faced
-1. API Key/Token limits, only free LLM models could be used.
+While building the Context-Aware Testing System, we encountered various challenges across different stages of development. From selecting the right AI models to managing performance and costs, each obstacle required careful consideration and strategic solutions. Here are some key challenges we faced:
+
+## 📌 1. Model Selection and Evaluation
+- Challenge: Choosing the most suitable AI model for different functionalities such as context-aware test generation, fraud detection, and chatbot interactions was complex.
+
+- Solution: We conducted extensive benchmarking using models like mistralai/Mixtral-8x22B-Instruct-v0.1 and meta-llama/Llama-3.3-70B-Instruct-Turbo to evaluate their accuracy, inference speed, and response relevance.
+
+- Outcome: Based on the use case, Mixtral was selected for its powerful contextual understanding, while Llama-3.3 excelled in complex conversational tasks.
+
+## 💰 2. Model Cost Management
+- Challenge: Using large AI models incurred significant computational and API costs, especially during real-time scenario generation and chatbot interactions.
+
+- Solution: We optimized by using smaller models like Gemini-2.0-Flash for faster BDD generation and offloaded non-critical workloads to more cost-efficient models. Additionally, caching mechanisms reduced redundant API calls.
+
+- Outcome: Achieved a balance between performance and cost-efficiency, reducing operational expenses without compromising accuracy
+
+## 🚀 3. Performance and Latency  
+- Challenge: Ensuring low latency for real-time interactions, especially for chatbot-based stock queries and ethical hacking simulations, was challenging.
+
+- Solution: Implemented asynchronous API calls, used gRPC for faster service communication, and optimized AI inference pipelines with GPU acceleration.
+
+- Outcome: Reduced response times to milliseconds for most queries, maintaining a seamless user experience.
+
+## 🔎 4. Ethical Hacking and False Positives
+- Challenge: Running automated ethical hacking tests using ZAP OWASP sometimes resulted in false positives, generating noise in reports.
+
+- Solution: Introduced a feedback mechanism to refine detection accuracy by training AI models to differentiate between genuine vulnerabilities and false positives.
+
+- Outcome: Improved accuracy in ethical hacking test results, reducing false alarms and enabling targeted vulnerability resolution.
+
+## ⚡ 5. Real-Time Fraud Detection Accuracy
+Challenge: Detecting fraudulent activities in real-time with minimal false positives was critical for effective fraud management.
+
+Solution: Developed custom fraud detection algorithms using Agentic AI that adapted to evolving patterns and flagged anomalies based on historical data.
+
+Outcome: Enhanced fraud detection accuracy and reduced the number of unnecessary alerts.
+
+🌐 6. Real-Time Stock Data Integration
+- Challenge: Integrating with Alpha Vantage for live stock data while maintaining system stability was challenging, especially during market fluctuations.
+
+- Solution: Implemented a resilient API management system with retry mechanisms and load balancing to ensure reliable data fetching.
+
+- Outcome: Ensured continuous availability of stock data for chatbot interactions and scenario testing.
+  
+
 
 ## 🏃 How to Run
 1. Clone the repository  
