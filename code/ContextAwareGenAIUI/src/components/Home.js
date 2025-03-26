@@ -48,6 +48,46 @@ const Home = () => {
               </ListItemIcon>
               <ListItemText primary="Supports OpenAI, Hugging Face, LangChain, GPT-J, and LLaMA." />
             </ListItem>
+            <Box sx={{ pl: 4, mt: 1 }}>
+              <Typography variant="h7" sx={{ fontWeight: "bold", color: "#333" }}>We have used the below models for our implementation:</Typography>
+              <List>
+			  
+                <ListItem>
+				<ListItemIcon>
+                <VerifiedUserIcon sx={{ color: "#4caf50" }} />
+              </ListItemIcon>
+                  <ListItemText primary="Agentic AI -> Together AI - mistralai/Mixtral-8x22B-Instruct-v0.1" />
+                </ListItem>
+				
+                <ListItem>
+				<ListItemIcon>
+                <VerifiedUserIcon sx={{ color: "#4caf50" }} />
+              </ListItemIcon>
+                  <ListItemText primary="OpenAI -> Together AI - meta-llama/Llama-3.3-70B-Instruct-Turbo" />
+                </ListItem>
+				
+                <ListItem>
+				<ListItemIcon>
+                <VerifiedUserIcon sx={{ color: "#4caf50" }} />
+              </ListItemIcon>
+                  <ListItemText primary="BDD Generation -> Google API's - gemini-2.0-flash" />
+                </ListItem>
+				
+                <ListItem>
+				<ListItemIcon>
+                <VerifiedUserIcon sx={{ color: "#4caf50" }} />
+              </ListItemIcon>
+                  <ListItemText primary="Ethical Hack -> ZAP OWASP" />
+                </ListItem>
+				
+                <ListItem>
+				<ListItemIcon>
+                <VerifiedUserIcon sx={{ color: "#4caf50" }} />
+              </ListItemIcon>
+                  <ListItemText primary="Realstock Info -> Alpha vantage" />
+                </ListItem>
+              </List>
+            </Box>
           </List>
         </Box>
 

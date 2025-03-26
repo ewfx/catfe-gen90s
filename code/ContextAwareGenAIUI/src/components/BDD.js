@@ -47,7 +47,8 @@ const BDD = () => {
   const handleGenerateReport = async () => {
     setLoadingReport(true);
     try {
-      window.open("/sample_report.html", "_blank");
+     // window.open("/sample_report.html", "_blank");
+	  window.open("/SwiftBDDgeneration.html", "_blank");
     } catch (error) {
       alert("Error generating the report.");
     } finally {
@@ -83,7 +84,7 @@ const BDD = () => {
           {loadingBDD ? <CircularProgress size={24} color="inherit" /> : "Generate BDD"}
         </Button>
       </Box>
-      <Box sx={{ mt: 2, textAlign: 'left', p: 2, border: '1px solid #ddd', borderRadius: 2, width: '60%', minHeight: '80px', maxHeight: '150px', overflowY: 'auto', backgroundColor: '#f9f9f9' }}>
+      <Box sx={{ mt: 2, textAlign: 'left', p: 2, border: '1px solid #ddd', borderRadius: 2, width: '60%', minHeight: '80px', maxHeight: '350px', overflowY: 'auto', backgroundColor: '#f9f9f9' }}>
         <Typography variant="h7" sx={{ fontWeight: 'bold', color: '#333' }}>BDD Test Cases:</Typography>
         <Typography sx={{ whiteSpace: 'pre-wrap', color: '#555' }}>{bddTestCases}</Typography>
       </Box>
