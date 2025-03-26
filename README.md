@@ -48,12 +48,20 @@ Describe the major technical or non-technical challenges your team encountered.
    ```sh
    npm start  # or python app.py
    ```
-
+once started , you should the application home page like below
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: React 
+- 🔹 Backend: Spring boot Microservice and Cucumber
+- 🔹 Database: MongoBD
+- 🔹 Other:
+     •	Chatbot with Agentic AI From TogetherAI -- mistralai/Mixtral-8x22B-Instruct-v0.1
+     •	meta-llama/Llama-3.3-70B-Instruct-Turbo
+     •	BDD Generation -> Google API's - gemini-2.0-flash
+     •	Ethical Hack -> ZAP OWASP
+     •	Aplha vantage – Interface for Stock API’s information
+     •	Spring Boot Microservices for middleware 
+     •	ReactJs for UI
+
 
 ## 👥 Team
 - **Prakash Bhat** - [GitHub](#) | [LinkedIn](#)
