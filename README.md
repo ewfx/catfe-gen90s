@@ -83,7 +83,7 @@ once started , you should the application home page like below
      •	meta-llama/Llama-3.3-70B-Instruct-Turbo
      •	BDD Generation -> Google API's - gemini-2.0-flash
      •	Ethical Hack -> ZAP OWASP
-     •	Aplha vantage – Interface for Stock API’s information
+     •	Alpha vantage – Interface for Stock API’s information
      •	Spring Boot Microservices for middleware 
      •	ReactJs for UI
 
