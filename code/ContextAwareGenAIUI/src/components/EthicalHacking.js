@@ -63,7 +63,7 @@ const EthicalHacking = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 5 }}>
-      <Paper elevation={3} sx={{ padding: 3, maxWidth: 600, textAlign: 'center' }}>
+      <Paper elevation={3} sx={{ padding: 3, minWidth: 600, maxWidth: 1000, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
           Ethical Hack Your App
         </Typography>

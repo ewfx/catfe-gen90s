@@ -9,9 +9,10 @@ import ContextAware from './components/ContextAware';
 import EthicalHacking from './components/EthicalHacking';
 import FraudDetection from './components/FraudDetection';
 import Home from './components/Home';
-import Chatbot from './components/Chatbot'; // Import chatbot
+import Chatbot from './components/Chatbot';
 import ReadAnyApp from './components/ReadAnyApp';
-import BDD from './components/BDD'; // Import BDD component
+import BDD from './components/BDD';
+import KYCVerification from './components/KYCVerification'; // Import KYCVerification component
 
 const drawerWidth = 240;
 
@@ -52,6 +53,9 @@ const Sidebar = ({ open, toggleDrawer }) => (
       <ListItem button component={Link} to="/bdd">
         <ListItemText primary="BDD Testing" />
       </ListItem>
+      <ListItem button component={Link} to="/kyc-verification">
+        <ListItemText primary="KYC Verification-AI" />
+      </ListItem>
     </List>
   </Drawer>
 );
@@ -79,11 +83,12 @@ const App = () => {
             <Route path="/context-by-url" element={<ReadAnyApp />} />
             <Route path="/ethical-hacking" element={<EthicalHacking />} />
             <Route path="/fraud-detection" element={<FraudDetection />} />
-            <Route path="/bdd" element={<BDD />} /> {/* New BDD route */}
+            <Route path="/bdd" element={<BDD />} />
+            <Route path="/kyc-verification" element={<KYCVerification />} /> {/* New KYC route */}
           </Routes>
         </Box>
       </Box>
-      <Chatbot /> {/* Chatbot added here */}
+      <Chatbot />
     </Router>
   );
 };
